@@ -13,7 +13,7 @@ import os
 from collections import OrderedDict, namedtuple
 import json
 import sys
-PY3 = (sys.version_info.major == 3)
+PY3 = (sys.version_info[0] == 3)
 
 
 logging.basicConfig(format='%(levelname)s: %(message)s', level=logging.INFO)
