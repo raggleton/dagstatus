@@ -13,6 +13,7 @@ import os
 from collections import OrderedDict, namedtuple
 import json
 import sys
+PY3 = (sys.version_info.major == 3)
 
 
 logging.basicConfig(format='%(levelname)s: %(message)s', level=logging.INFO)
@@ -46,7 +47,10 @@ class TColors:
 
     COLORS = fmt_dict['colors']
     for k, v in COLORS.items():
-        COLORS[k] = bytes(v).decode('unicode_escape')
+        if PY3:
+            COLORS[k] = str(v).encode().decode('unicode_escape')
+        else:
+            COLORS[k] = str(v).decode('string_escape')
     STATUS_COLORS = fmt_dict['statuses']
     STATUS_DETAIL_COLORS = fmt_dict['detailed_statuses']
     FMT_COLORS = fmt_dict['formatting']
