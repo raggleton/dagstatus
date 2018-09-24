@@ -447,6 +447,8 @@ if __name__ == "__main__":
     if args.verbose:
         log.setLevel(logging.DEBUG)
 
+    log.debug(args)
+
     if len(args.statusFile) == 0:
         parser.print_help()
         exit()
