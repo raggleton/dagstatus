@@ -252,6 +252,10 @@ def interpret_status_file(status_filename):
                 # Actually handle the line
                 line_parsed = interpret_line(line)
                 contents[line_parsed.key] = line_parsed
+
+    if dag_status is None:
+        raise RuntimeError("Cannot parse input file %s" % status_filename)
+
     dag_status.node_statuses = node_statuses
 
     return dag_status, node_statuses, status_end
