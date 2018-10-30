@@ -304,7 +304,7 @@ def generate_DagStatus(contents):
 def generate_NodeStatus(contents):
     """Create, fill, and return a NodeStatus object with info in contents dict."""
     return NodeStatus(node=contents['Node'].value,
-                      node_status=contents['NodeStatus'].comment,
+                      node_status=contents['NodeStatus'].comment.replace("STATUS_", ""),
                       status_details=contents['StatusDetails'].value,
                       retry_count=contents['RetryCount'].value,
                       job_procs_queued=contents['JobProcsQueued'].value,
