@@ -11,9 +11,9 @@
     },
 
     "statuses" : {
-        "STATUS_SUBMITTED": "BLUE",
-        "STATUS_DONE": "GREEN",
-        "STATUS_ERROR": "RED"
+        "SUBMITTED": "BLUE",
+        "DONE": "GREEN",
+        "ERROR": "RED"
     },
 
     "detailed_statuses" : {
