@@ -146,7 +146,7 @@ class DagStatus(ClassAd):
     @property
     def job_procs_running(self):
         return len([n for n in self.node_statuses
-                    if n.node_status == "STATUS_SUBMITTED" and
+                    if n.node_status == "SUBMITTED" and
                     n.status_details == "not_idle"])
 
     @property
